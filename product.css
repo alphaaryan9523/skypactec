@@ -1,0 +1,180 @@
+/* General styles for navigation */
+nav {
+    background-color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+}
+
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar li {
+    position: relative;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+    padding: 10px 15px;
+    display: block;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    background-color: #002147;
+    color: white;
+}
+
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: lightgray;
+    padding: 10px 0;
+    top: 100%; /* Ensure it appears below the menu */
+    left: 0;
+    white-space: nowrap;
+    z-index: 1000;
+    border-radius: 10px;
+    list-style: none;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content li a {
+    color: black;
+    padding: 10px 15px;
+    display: block;
+}
+
+.dropdown-content li a:hover {
+    background-color: #002147;
+    color: white;
+}
+
+/* Sub-dropdown styles (appearing on the left side) */
+.sub-dropdown {
+    position: relative;
+}
+
+.sub-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: lightgray;
+    top: 0; /* Align with parent dropdown */
+    right: 100%; /* Position it to the left */
+    white-space: nowrap;
+    z-index: 1001;
+    border-radius: 10px;
+    list-style: none;
+}
+
+.sub-dropdown:hover .sub-dropdown-content {
+    display: block;
+}
+
+.sub-dropdown-content li a {
+    color: black;
+    padding: 10px 15px;
+    display: block;
+}
+
+.sub-dropdown-content li a:hover {
+    background-color: #002147;
+    color: white;
+}
+
+/* Hamburger Menu Styles */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    transition: all 0.3s;
+}
+
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+    .navbar {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+        display: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar li {
+        width: 100%;
+    }
+
+    .navbar a {
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+
+    /* Ensure dropdown on small screens works */
+    .dropdown-content,
+    .sub-dropdown-content {
+        position: relative;
+        left: 0;
+        right: 0;
+    }
+
+    .dropdown-content.active,
+    .sub-dropdown-content.active {
+        display: block;
+    }
+
+    /* On mobile, sub-dropdown opens below */
+    .sub-dropdown-content {
+        position: relative;
+        right: 0;
+        top: 0;
+    }
+}

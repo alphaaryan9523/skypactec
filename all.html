@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skypactec Machines - Feeding & Attachment Systems</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        #clients-section{
+            scroll-margin-top: 80px;
+        }
+        /* Global Styles */
+        :root {
+            --primary: #002147;
+            --secondary: #ff6b00;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--secondary);
+            color: white;
+            border-radius: 44px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #e45e00;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        /* Navigation Styles (Omitted for brevity, assumed unchanged) */
+        nav {
+            background-color: white;
+            padding: 5px 0; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            padding-top: 10px;
+        }
+
+        .logo-img {
+            height: 50px;  
+            width: auto;   
+            transition: transform 0.3s ease;
+        }
+
+        .navbar {
+            list-style-type: none;
+            display: flex;
+            gap: 0;
+        }
+
+        .navbar li {
+            position: relative;
+        }
+
+        .navbar > li > a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            padding: 12px 18px;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+            margin: 0 5px;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: var(--secondary);
+            background-color: rgba(0, 33, 71, 0.05);
+        }
+
+        .navbar a.active {
+            font-weight: 600;
+        }
+
+        /* Dropdown styles (Omitted for brevity, assumed unchanged) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 240px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            z-index: 1000;
+            top: 100%;
+            left: 0;
+            padding: 8px 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .dropdown:hover .dropdown-content,
+        .dropdown:focus-within .dropdown-content {
+            display: block;
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .dropdown-content a {
+            color: var(--dark);
+            padding: 12px 20px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .dropdown-content a:hover {
+            background-color: var(--light);
+            border-left: 3px solid var(--secondary);
+            padding-left: 25px;
+        }
+
+        .dropdown-content a i {
+            margin-right: 8px;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Sub-dropdown styles (Omitted for brevity, assumed unchanged) */
+        .sub-dropdown {
+            position: relative;
+        }
+
+        .sub-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 240px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            z-index: 1001;
+            top: 0;
+            left: 100%;
+            padding: 8px 0;
+            transform: translateX(10px);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .sub-dropdown:hover .sub-dropdown-content,
+        .sub-dropdown:focus-within .sub-dropdown-content {
+            display: block;
+            transform: translateX(0);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Mobile menu (Omitted for brevity, assumed unchanged) */
+        .menu-icon {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            padding: 5px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            background: none;
+            border: none;
+        }
+
+        .menu-icon:hover {
+            background-color: var(--light-gray);
+        }
+
+        .menu-icon .bar {
+            width: 25px;
+            height: 3px;
+            background-color: var(--dark);
+            transition: all 0.3s;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Product Hero Section (Omitted for brevity, assumed unchanged) */
+        .product-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #003066 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .product-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .product-hero p {
+            font-size: 1.3rem;
+            margin: 0 auto 40px auto;
+            opacity: 0.9;
+            max-width: 800px;
+        }
+        
+        .product-categories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        /* Production Sections (Omitted for brevity, assumed unchanged) */
+        .production-section {
+            padding: 80px 0;
+        }
+        
+        .production-section.blue-bg {
+            background: linear-gradient(135deg, var(--primary) 0%, #003066 100%);
+            color: white;
+        }
+        
+        .production-section.white-bg {
+            background: white;
+            color: var(--dark);
+        }
+        
+        .production-content {
+            display: grid;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .production-content.two-col {
+            grid-template-columns: 1fr 1fr;
+        }
+        
+        .production-content.one-col {
+            grid-template-columns: 1fr;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .production-text h1 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 0;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .production-text h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        .one-col .production-text h1::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .blue-bg .production-text h1 {
+            color: white;
+        }
+        
+        .video-container {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+        }
+        
+        .video-container video {
+            width: 100%;
+            display: block;
+            border-radius: 12px;
+        }
+        
+        /* --- COMPARISON BOX & TABS STYLES (SHARED) --- */
+
+        .bottle-comparison-box {
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        
+        .comparison-tabs {
+            display: flex;
+            border-bottom: 1px solid var(--light-gray);
+            background: white; 
+        }
+        
+        .comparison-tab {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .comparison-tab:hover {
+             background: #ffeeda;
+        }
+
+        /* --- BOTTLE SECTION: SOLID ORANGE STYLING --- */
+
+        #bottle-section .bottle-comparison-box {
+            background: var(--secondary); /* Solid Orange Color */
+            color: white; /* Ensure text inside is white */
+            box-shadow: 0 5px 20px rgba(255, 107, 0, 0.25);
+        }
+
+        #bottle-section .bottle-content-grid .production-text h1,
+        #bottle-section .bottle-content-grid .production-text h2 {
+            color: white; /* Keep text white inside the orange box */
+        }
+        
+        #bottle-section .bottle-content-grid .production-text h1::after {
+            background-color: white; /* Use white line under the heading */
+        }
+        
+        #bottle-section .comparison-tab.active {
+            background: var(--secondary); /* Solid Orange Color */
+            color: white; /* White text on orange tab */
+            border-bottom: 3px solid white; /* White line for contrast */
+            font-weight: 700;
+        }
+
+        #bottle-section .comparison-tabs {
+            border-bottom: none;
+        }
+        
+        /* --- LEAFLET SECTION: SOLID ORANGE STYLING --- */
+
+        #leaflet-section .bottle-comparison-box {
+            background: var(--secondary); /* Solid Orange Color */
+            color: white; /* Ensure text inside is white */
+            box-shadow: 0 5px 20px rgba(255, 107, 0, 0.25);
+        }
+        
+        /* Override dark text to white for leaflet section titles */
+        #leaflet-section .production-text h1,
+        #leaflet-section .production-text h2 {
+            color: white !important; /* Force white text over orange background */
+        }
+        
+        /* Ensure the H1 line is white for visibility */
+        #leaflet-section .production-text h1::after {
+            background-color: white;
+        }
+
+        /* Leaflet Active Tab Styling */
+        #leaflet-section .comparison-tab.active {
+            background: var(--secondary); /* Solid Orange Color */
+            color: white; /* White text on orange tab */
+            border-bottom: 3px solid white; /* White line for contrast */
+            font-weight: 700;
+        }
+
+        #leaflet-section .comparison-tabs {
+            border-bottom: none;
+        }
+        
+        /* --- END LEAFLET STYLING --- */
+
+
+        .bottle-content-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr; 
+            gap: 40px;
+            padding: 40px;
+        }
+
+        .bottle-content-grid .production-text h1::after {
+            left: 0;
+            transform: translateX(0);
+        }
+        
+        /* --- NEW CTA STYLES --- */
+        .product-cta {
+            background: linear-gradient(to right, var(--primary) 0%, #003066 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .product-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .product-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+
+        /* --- NEW FOOTER STYLES --- */
+        .footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        /* Adjusted h3 to match your CSS */
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+
+        .footer-column p, .footer-column a {
+            color: #ccc;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 0.9rem;
+            color: #999;
+        }
+        
+        
+        /* Responsive Styles (Omitted for brevity, assumed unchanged) */
+        @media (max-width: 768px) {
+            .bottle-content-grid {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .production-content.two-col {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                position: fixed;
+                top: 50px;
+                left: -100%;
+                width: 280px;
+                height: calc(100vh - 50px);
+                background-color: white;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                transition: all 0.4s ease;
+                overflow-y: auto;
+            }
+            
+            .navbar.active {
+                left: 0;
+            }
+            
+            /* (Other mobile styles omitted for brevity) */
+            
+            .menu-icon {
+                display: flex;
+            }
+            
+            .menu-icon.active .bar:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+            
+            .menu-icon.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .menu-icon.active .bar:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+            
+            /* Mobile dropdown handling (Omitted for brevity, assumed unchanged) */
+            .dropdown-content,
+            .sub-dropdown-content {
+                position: static;
+                box-shadow: none;
+                margin-left: 20px;
+                display: none;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                width: 100%;
+                border-radius: 0;
+            }
+            
+            .dropdown.active .dropdown-content,
+            .sub-dropdown.active .sub-dropdown-content {
+                display: block;
+            }
+            
+            .product-hero {
+                padding: 80px 0;
+            }
+            
+            .product-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .production-text h1 {
+                font-size: 1.8rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .nav-container {
+                padding: 0 15px;
+            }
+            
+            .product-hero {
+                padding: 60px 0;
+            }
+            
+            .product-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .product-cta h2 {
+                font-size: 2rem;
+            }
+            
+            .product-categories {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .product-categories .btn {
+                width: 100%;
+                max-width: 280px;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo-container">
+                
+                    <img src="img/logo.png" alt="Skypactec Logo" class="logo-img" />
+               
+            </div>
+            
+            <button class="menu-icon" id="menu-icon" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            
+            <ul class="navbar" id="navbar" role="menubar">
+                <li role="none"><a href="index.html" role="menuitem">Home</a></li>
+                <li class="dropdown" role="none">
+                    <a href="#" role="menuitem" aria-haspopup="true" aria-expanded="false" class="active">
+                        Products <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </a>
+                    <ul class="dropdown-content" role="menu" aria-label="Products submenu">
+                        <li class="sub-dropdown" role="none">
+                            <a href="#" role="menuitem" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-box" aria-hidden="true"></i> Cartoning Machine <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                            </a>
+                            <ul class="sub-dropdown-content" role="menu" aria-label="Cartoning machine submenu">
+                                <li role="none"><a href="horizontal.html" role="menuitem"><i class="fas fa-arrows-alt-h" aria-hidden="true"></i> Horizontal Cartoning Machine</a></li>
+                                <li role="none"><a href="vertical.html" role="menuitem"><i class="fas fa-arrows-alt-v" aria-hidden="true"></i> Vertical Cartoning Machine</a></li>
+                            </ul>
+                        </li>
+                        <li role="none"><a href="case.html" role="menuitem"><i class="fas fa-archive" aria-hidden="true"></i> Case Erector</a></li>
+                        <li role="none"><a href="all.html" role="menuitem"><i class="fas fa-cube" aria-hidden="true"></i> Feeding Attachments</a></li>
+                    </ul>
+                </li>
+                <li role="none"><a href="index.html#services-section" role="menuitem">Services</a></li>
+                <li role="none"><a href="index.html#clients-section" role="menuitem">Clients</a></li>
+                <li role="none"><a href="career.html" role="menuitem" aria-current="page">Careers</a></li>
+                <li role="none"><a href="contact.html" role="menuitem">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section class="product-hero">
+        <div class="container">
+            <h1>Feeding Attachment Systems</h1>
+            <p>Automated transfer, feeding, and pick & place solutions for soaps, sachets, tubes, pouches, and more.</p>
+            <div class="product-categories">
+                <a href="#soap-section" class="btn">Soap Transfer</a> 
+                <a href="#sachet-section" class="btn">Sachet Transfer</a> 
+                <a href="#collator-section" class="btn">Blister Collator</a> 
+                <a href="#bottle-section" class="btn">Bottle Transfer</a> 
+                <a href="#leaflet-section" class="btn">Leaflet Feeder</a> 
+                <a href="#tube-section" class="btn">Tube Transfer</a> 
+                <a href="#pouch-section" class="btn">Pouch Transfer</a> 
+                <a href="#rotary-section" class="btn">Rotary Pick & Place</a> 
+                <a href="#scara-section" class="btn">Scara Robot</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="production-section  white-bg" id="soap-section">
+        <div class="container">
+            <div class="production-content two-col">
+                <div class="production-text">
+                    <h1>Soap Transfer System</h1>
+                </div>
+                <div class="production-video">
+                    <div class="video-container">
+                        <video id="product-video-soap" preload="metadata" controls> 
+                            <source src="img/soap transfer.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="production-section blue-bg" id="tube-section">
+        <div class="container">
+            <div class="production-content two-col">
+                <div class="production-video">
+                    <div class="video-container">
+                        <video id="product-video-tube" preload="metadata" controls> 
+                            <source src="img/tube transfer.mp4" type="video/mp4"> Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                <div class="production-text">
+                    <h1>Tube Transfer System</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="production-section white-bg" id="sachet-section">
+        <div class="container">
+            <div class="production-content two-col">
+                <div class="production-text">
+                    <h1>Sachet Transfer System</h1>
+                </div>
+                <div class="production-video">
+                    <div class="video-container">
+                        <video id="product-video-sachet" preload="metadata" controls> 
+                            <source src="img/sachet.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="production-section blue-bg" id="collator-section">
+        <div class="container">
+            <div class="production-content two-col">
+                <div class="production-video">
+                    <div class="video-container">
+                        <video id="product-video-collator" preload="metadata" controls> 
+                            <source src="img/blister collator.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                <div class="production-text">
+                    <h1>Blister Collator System</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="bottle-section" class="white-bg">
+        <div class="container">
+            <div class="bottle-comparison-box">
+                <div class="comparison-tabs" id="bottle-tabs">
+                    <div class="comparison-tab active" data-type="star-wheel">Star-Wheel System</div>
+                    <div class="comparison-tab" data-type="screw-type">Screw-Type System</div>
+                </div>
+    
+                <div class="bottle-content-grid">
+                    <div class="production-text">
+                        <h1>Bottle Transfer System</h1>
+                        <h2 id="bottle-title">Bottle Transfer System</h2>
+                    </div>
+                    
+                    <div class="production-video">
+                        <div class="video-container">
+                            <video id="product-video-bottle"  controls> 
+                                <source src="" type="video/mp4" id="bottle-video-source">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="production-section blue-bg" id="leaflet-section">
+        <div class="container">
+            <div class="bottle-comparison-box">
+                
+                <div class="comparison-tabs" id="leaflet-tabs">
+                    <div class="comparison-tab active" data-type="continuous">Continuous Motion</div>
+                    <div class="comparison-tab" data-type="intermittent">Intermittent Motion</div>
+                </div>
+    
+                <div class="bottle-content-grid">
+                    
+                    <div class="production-text">
+                        
+                        <h2 id="leaflet-title">Continuous Motion Leaflet Unit</h2>
+                    </div>
+                    
+                    <div class="production-video">
+                        <div class="video-container">
+                            <video id="product-video-leaflet" controls> 
+                                <source src="" type="video/mp4" id="leaflet-video-source">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="production-section white-bg" id="pouch-section">
+        <div class="container">
+            <div class="production-content one-col">
+                <div class="production-text">
+                    <h1>Pouch Transfer System</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="production-section blue-bg" id="rotary-section">
+        <div class="container">
+            <div class="production-content one-col">
+                <div class="production-text">
+                    <h1>Rotary Pick and Place System</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+                    
+    <section class="product-cta">
+        <div class="container">
+            <h2>Need a Custom Feeding Solution?</h2>
+            <p>Contact our experts to discuss your specific requirements and get a tailored solution for your production line.</p>
+            <a href="contact.html" class="btn">Get In Touch</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h2>About Us</h2>
+                    <p>Skypactec Machines is a leading innovator in packaging solutions, serving pharmaceutical, food, and FMCG industries worldwide.</p>
+                    
+                </div>
+                <div class="footer-column">
+                    <h2>Quick Links</h2>
+                    <a href="index.html">Home</a>
+                    <a href="horizontal.html"> Horizontal Cartoning Machine</a>
+                    <a href="vertical.html" class="active">Vertical Cartoning Machine</a> <a href="product3.html">Case Erector</a>
+                    <a href="all.html">Feeding Attachments</a>
+                    <a href="career.html">Careers</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+                <div class="footer-column">
+                    <h2>Contact Info</h2>
+                    <p><i></i>Skypactec Machines Pvt. Ltd.
+                        Unit No. C-5,
+                        Survey No. 653, Near Reliance Office,
+                        Ganesh Nagar, MIDC,
+                        Bhosari, Pune - 411026</p>
+                    <p><i class="fas fa-phone"></i> +9130220085</p>
+                    <p><i class="fas fa-envelope"></i> info@skypactec.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+              <p style="color: white;">&copy; Copyright 2024 - Skypactec Machines PVT LTD. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+  
+               
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- Data Definition for Bottle Transfer System (Simplified) ---
+            const bottleData = {
+                'star-wheel': {
+                    title: 'Star-Wheel System',
+                    videoSrc: 'img/starwheel.mp4',
+                },
+                'screw-type': {
+                    title: 'Screw-Type System',
+                    videoSrc: 'img/bottles.mp4',
+                }
+            };
+
+            // --- Data Definition for Leaflet Insertion System (Simplified) ---
+            const leafletData = {
+                'continuous': { 
+                    title: 'Continuous Motion Leaflet Unit',
+                    videoSrc: 'img/Prefolded Leaftlet unit on continuous carton machine.mp4', 
+                },
+                'intermittent': { 
+                    title: 'Intermittent Motion Leaflet Unit',
+                    videoSrc: 'img/leaflet.mp4', 
+                }
+            };
+
+            // --- Generic Update Function for Comparison Sections ---
+            // Function to only update title and video
+            const updateSection = (type, dataSet, titleEl, videoEl, sourceEl) => {
+                const data = dataSet[type];
+                
+                if (data) {
+                    titleEl.textContent = data.title;
+                    
+                    sourceEl.setAttribute('src', data.videoSrc);
+                    videoEl.load(); 
+                    videoEl.currentTime = 0;
+                }
+            };
+
+            // --- Bottle Section Logic ---
+            const bottleTabs = document.querySelectorAll('#bottle-tabs .comparison-tab');
+            const bottleTitle = document.getElementById('bottle-title');
+            const bottleVideoElement = document.getElementById('product-video-bottle');
+            const bottleVideoSource = document.getElementById('bottle-video-source');
+
+            bottleTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const type = tab.getAttribute('data-type');
+                    bottleTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    updateSection(
+                        type, bottleData, 
+                        bottleTitle, bottleVideoElement, bottleVideoSource
+                    );
+                });
+            });
+            // Initialization for Bottle Section
+            updateSection(
+                'star-wheel', bottleData, 
+                bottleTitle, bottleVideoElement, bottleVideoSource
+            );
+
+
+            // --- Leaflet Section Logic ---
+            const leafletTabs = document.querySelectorAll('#leaflet-tabs .comparison-tab');
+            const leafletTitle = document.getElementById('leaflet-title');
+            const leafletVideoElement = document.getElementById('product-video-leaflet');
+            const leafletVideoSource = document.getElementById('leaflet-video-source');
+
+            leafletTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const type = tab.getAttribute('data-type');
+                    leafletTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    updateSection(
+                        type, leafletData, 
+                        leafletTitle, leafletVideoElement, leafletVideoSource
+                    );
+                });
+            });
+            // Initialization for Leaflet Section
+            updateSection(
+                'continuous', leafletData, 
+                leafletTitle, leafletVideoElement, leafletVideoSource
+            );
+            
+            // Mobile menu toggle
+            document.getElementById('menu-icon').addEventListener('click', function() {
+                this.classList.toggle('active');
+                document.getElementById('navbar').classList.toggle('active');
+            });
+            
+            // Mobile dropdown handling
+            if (window.innerWidth <= 768) {
+                const dropdowns = document.querySelectorAll('.dropdown > a, .sub-dropdown > a');
+                
+                dropdowns.forEach(dropdown => {
+                    dropdown.addEventListener('click', function(e) {
+                        if (this.nextElementSibling && (this.nextElementSibling.classList.contains('dropdown-content') || 
+                            this.nextElementSibling.classList.contains('sub-dropdown-content'))) {
+                            e.preventDefault();
+                            
+                            // Close other open dropdowns
+                            document.querySelectorAll('.dropdown, .sub-dropdown').forEach(item => {
+                                if (item !== this.parentElement) {
+                                    item.classList.remove('active');
+                                }
+                            });
+                            
+                            this.parentElement.classList.toggle('active');
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+    </body>
+</html>
